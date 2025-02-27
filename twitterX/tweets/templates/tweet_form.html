@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    TwitterX
+{% endblock %}
+
+
+{% block content %}
+
+<h1 class="text-center text-white mt-3">Welcome to our TwitterX</h1>
+<h2 class="text-white">
+  {% if form.instance.pk %}
+   Edit  Tweet
+   {%  else  %}
+    Create tweet
+    {% endif   %}
+    <form method="post" enctype="multipart/form-data"  >
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-warning" type="submit">Submit</button>
+    </form>
+    <a href="{% url  'get_list_of_tweets' %}">Back to Tweet List</a>
+</h2>
+
+{% endblock %}

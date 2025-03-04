@@ -12,7 +12,7 @@
 
 <a  class="btn btn-primary" href="{% url  'create_tweet' %}"> Create New  Tweet</a>
 
-<div class="container row gap-3 mt-4">
+<div class="container text-dark row gap-3 mt-4">
    {% for tweet in tweets %}
    <div class="card" style="width: 18rem;">
     <img src="{{tweet.photo.url}}" class="card-img-top" alt="...">
